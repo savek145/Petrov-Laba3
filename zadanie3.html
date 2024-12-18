@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Замена отрицательных элементов</title>
+</head>
+<body>
+    <h2>Замена отрицательных элементов их квадратами</h2>
+    <script>
+        let arr = Array.from({length: 20}, () => Math.floor(Math.random() * 150) - 100);
+        
+        let positiveSum = 0;
+        let positiveCount = 0;
+        let negativeSum = 0;
+        let negativeCount = 0;
+        let zeroCount = 0;
+
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] > 0) {
+                positiveSum += arr[i];
+                positiveCount++;
+            } else if(arr[i] < 0) {
+                negativeSum += arr[i];
+                negativeCount++;
+            } else {
+                zeroCount++;
+            }
+        }
+
+        let positiveAvg = positiveCount > 0 ? positiveSum / positiveCount : 0;
+        let negativeAvg = negativeCount > 0 ? negativeSum / negativeCount : 0;
+
+        document.write("Массив: " + arr.join(", ") + "<br>");
+        document.write("Среднее арифметическое положительных чисел: " + positiveAvg.toFixed(2) + "<br>");
+        document.write("Среднее арифметическое отрицательных чисел: " + negativeAvg.toFixed(2) + "<br>");
+        document.write("Количество нулей: " + zeroCount);
+    </script>
+</body>

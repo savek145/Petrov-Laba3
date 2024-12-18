@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Симулятор случайных значений</title>
+    <meta charset="utf-8">
+</head>
+<body>
+    <h2>Симулятор случайных значений (красный, черный, белый)</h2>
+    <script>
+        const iterations = 1000000;
+        let redCount = 0;
+        let maxRedStreak = 0;
+        let currentRedStreak = 0;
+
+        for (let i = 0; i < iterations; i++) {
+            let value = Math.floor(Math.random() * 3);
+            
+            if (value === 0) { 
+                currentRedStreak++;
+                redCount++;
+            }
+        }
+
+        document.write(`<p>Всего красный выпал: ${redCount} раз</p>`);
+    </script>
+</body>
+</html>

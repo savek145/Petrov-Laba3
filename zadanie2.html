@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Замена отрицательных элементов</title>
+</head>
+<body>
+    <h2>Замена отрицательных элементов их квадратами</h2>
+    <script>
+        let arr = Array.from({length: 20}, () => Math.floor(Math.random() * 150) - 100);
+        
+        document.write("Исходный массив: " + arr.join(", ") + "<br>");
+        
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i] < 0) {
+                arr[i] = arr[i] * arr[i];
+            }
+        }
+        
+        document.write("Массив после замены: " + arr.join(", "));
+    </script>
+</body>
+</html>
